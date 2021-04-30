@@ -1,0 +1,74 @@
+body {
+  margin: 5px 100px;
+  color: #04538c;
+}
+
+#FirstSection {
+  color: #04538c;
+  border-bottom: 2px solid #04538c;
+  margin: 5px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+#MainHead {
+  font-size: 2.5em;
+  font-family: "Courier New", Courier, monospace;
+  letter-spacing: 3px;
+}
+
+#secondHead {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-top: -5px;
+}
+
+.ToUpper {
+  text-transform: uppercase;
+}
+
+.headers3 {
+  text-decoration: underline;
+  text-align: center;
+}
+
+.addpadd {
+  margin-top: 10px;
+}
+.centered {
+  text-align: center;
+  margin: 5px auto;
+  padding: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.maximise {
+  min-width: 100%;
+}
+
+.stayinline {
+  display: inline-block;
+}
+
+.flexdisplay {
+  display: flex;
+  justify-content: space-between;
+}
+.flexdisplay2 {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.FitMore {
+  margin: 10px auto;
+  margin-left: 1em;
+  font-size: 1.2em;
+}
+
+.setBack {
+  background-image: url(./resources/fuel\ img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
