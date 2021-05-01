@@ -7,6 +7,12 @@ body {
   text-transform: uppercase;
 }
 
+.addOns {
+  float: left;
+  padding: 5px;
+  cursor: pointer;
+}
+
 .headers3 {
   text-decoration: underline;
   text-align: center;

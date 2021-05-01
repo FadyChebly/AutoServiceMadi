@@ -4,6 +4,7 @@ const port = 3000;
 const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
+const Customer = require("./models/customer");
 
 mongoose.connect("mongodb://localhost:27017/CarShop", {
   useNewUrlParser: true,
@@ -27,6 +28,12 @@ app.use(methodOverride("_method"));
 
 app.get("/", (req, res) => {
   res.render("home");
+});
+
+app.get("/clients", async (req, res) => {
+  const { client } = req.query;
+  const customer = await Customer.find({ client: `${client}` });
+  res.render("client", { customer });
 });
 
 app.listen(port, () => {
