@@ -5,6 +5,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const Customer = require("./models/customer");
+const Numfile = require("./models/FileNumbering");
 
 mongoose.connect("mongodb://localhost:27017/CarShop", {
   useNewUrlParser: true,
@@ -27,12 +28,15 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 app.get("/", (req, res) => {
+  // const number = Numfile.find({});
+  // // const num = number.length();
   res.render("home");
 });
 
 app.get("/clients", async (req, res) => {
   const { client } = req.query;
   const customer = await Customer.find({ client: `${client}` });
+  // console.log(customer.length);
   res.render("client", { customer });
 });
 

@@ -10,7 +10,7 @@
   <body>
     <% if(customer.length < 1){ %>
     <h1>aucun résultat exist</h1>
-    <%} %> <% else{ %>
+    <%} else{ %>
     <table>
       <thead>
         <tr>
@@ -24,8 +24,11 @@
         <% for(let cust of customer){ %>
         <tr>
           <td><%= cust.client%></td>
+          <td><%= cust.car%></td>
+          <td><%= cust.tel%></td>
+          <td><%= cust.cellulaire%></td>
         </tr>
-        <% } %> <%} %>
+        <% }} %>
       </tbody>
     </table>
   </body>
