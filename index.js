@@ -27,10 +27,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
-app.get("/", (req, res) => {
-  // const number = Numfile.find({});
-  // // const num = number.length();
-  res.render("home");
+app.get("/", async (req, res) => {
+  const number = await Numfile.find({});
+  const num = number.length;
+  console.log(num);
+  res.render("home", { num });
 });
 
 app.get("/clients", async (req, res) => {
