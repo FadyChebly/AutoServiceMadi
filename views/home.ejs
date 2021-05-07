@@ -64,6 +64,7 @@
     </form>
     <!-- end of search Bar -->
     <div class="myInvoice">
+      <!-- choice -->
       <div class="row centered">
         <div class="col-md-3 col-sm-3">
           <input type="radio" id="nouveau" name="choice" />
@@ -78,7 +79,9 @@
           <label for="Entretien" class="ToUpper">Entretien</label>
         </div>
       </div>
+      <!-- end of choice -->
 
+      <!-- fiche de reception -->
       <div class="row row1">
         <div class="col-md-5 col-sm-5 addpadd">
           <h3 class="ToUpper headers3">fiche de reception voiture</h3>
@@ -86,18 +89,55 @@
             <label for="date">Date:</label>
             <input type="date" name="date" id="date" style="width: 100%" />
           </div>
+          <% if(customer){ %>
+          <div class="col-md-12 col-sm-12">
+            <label for="client">Client:</label>
+            <input
+              type="text"
+              name="client"
+              id="client"
+              value="<%=customer.client%>"
+              style="width: 100%"
+            />
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <label for="voiture">Voiture:</label>
+            <input
+              type="text"
+              name="car"
+              id="voiture"
+              value="<%=customer.car%>"
+              style="width: 100%"
+            />
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <label for="tel">Tél:</label>
+            <input
+              type="text"
+              name="tel"
+              id="tel"
+              value="<%=customer.tel%>"
+              style="width: 100%"
+            />
+          </div>
+          <div class="col-md-12 col-sm-12">
+            <label for="Cellulaire">Cellulaire:</label>
+            <input
+              type="text"
+              name="cellulaire"
+              id="Cellulaire"
+              value="<%=customer.cellulaire%>"
+              style="width: 100%"
+            />
+          </div>
+          <% } else{ %>
           <div class="col-md-12 col-sm-12">
             <label for="client">Client:</label>
             <input type="text" name="client" id="client" style="width: 100%" />
           </div>
           <div class="col-md-12 col-sm-12">
             <label for="voiture">Voiture:</label>
-            <input
-              type="text"
-              name="voiture"
-              id="voiture"
-              style="width: 100%"
-            />
+            <input type="text" name="car" id="voiture" style="width: 100%" />
           </div>
           <div class="col-md-12 col-sm-12">
             <label for="tel">Tél:</label>
@@ -107,11 +147,13 @@
             <label for="Cellulaire">Cellulaire:</label>
             <input
               type="text"
-              name="Cellulaire"
+              name="cellulaire"
               id="Cellulaire"
               style="width: 100%"
             />
           </div>
+          <%} %>
+
           <div class="col-md-12 col-sm-12">
             <label for="immatriculation">Immatriculation:</label>
             <input
@@ -151,13 +193,14 @@
                 />
               </div>
               <div class="col-md-12 col-sm-12">
-                <label for="Essence">Essence:</label>
-                <input
-                  type="text"
-                  name="Essence"
-                  id="Essence"
-                  style="width: 100%"
-                />
+                <label for="essence">Essence</label>
+                <select name="essence" id="essence" style="width: 100%">
+                  <option value="empty">|</option>
+                  <option value="half_empty">||</option>
+                  <option value="half">|||</option>
+                  <option value="half_full">||||</option>
+                  <option value="full">|||||</option>
+                </select>
               </div>
               <div class="col-md-12 col-sm-12">
                 <label for="tel">Gasoil:</label>
@@ -451,7 +494,7 @@
           </div>
         </div>
       </div>
-
+      <!-- end of fiche de reception -->
       <div class="row" style="margin-top: 2em">
         <h3 class="ToUpper headers3">pieces À reparer</h3>
       </div>

@@ -30,15 +30,26 @@ app.use(methodOverride("_method"));
 app.get("/", async (req, res) => {
   const number = await Numfile.find({});
   const num = number.length;
+  const customer = "";
   console.log(num);
-  res.render("home", { num });
+  res.render("home", { customer, num });
 });
 
 app.get("/clients", async (req, res) => {
   const { client } = req.query;
-  const customer = await Customer.find({ client: `${client}` });
-  // console.log(customer.length);
+  const customer = await Customer.find({
+    client: { $regex: ".*" + client + ".*" },
+  });
+  console.log(customer.length);
   res.render("client", { customer });
+});
+
+app.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const customer = await Customer.findById(id);
+  const number = await Numfile.find({});
+  const num = number.length;
+  res.render("home", { customer, num });
 });
 
 app.listen(port, () => {
