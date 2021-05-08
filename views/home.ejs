@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cool Service</title>
+    <title>Auto Service</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,7 +23,7 @@
     <!-- company Header And info -->
     <section id="FirstSection">
       <div id="secondDiv">
-        <h1 id="MainHead">Cool Service</h1>
+        <h1 id="MainHead">Auto Service</h1>
         <h3 id="secondHead">Climatisation - Sonorisation - Alarme</h3>
         <div>
           11 BP 1929 Abidjan 11 - Boulevard de Marseille - Zone 2C face Palais
@@ -64,1264 +64,1312 @@
     </form>
     <!-- end of search Bar -->
     <div class="myInvoice">
-      <!-- choice -->
-      <div class="row centered">
-        <div class="col-md-3 col-sm-3">
-          <input type="radio" id="nouveau" name="choice" />
-          <label for="nouveau" class="ToUpper">nouveau</label>
+      <form action="/billing" method="POST">
+        <!-- choice -->
+        <div class="row centered">
+          <div class="col-md-3 col-sm-3">
+            <input type="radio" id="nouveau" name="choice" />
+            <label for="nouveau" class="ToUpper">nouveau</label>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <input type="radio" id="retour" name="choice" />
+            <label for="retour" class="ToUpper">retour</label>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <input type="radio" id="Entretien" name="choice" />
+            <label for="Entretien" class="ToUpper">Entretien</label>
+          </div>
         </div>
-        <div class="col-md-3 col-sm-3">
-          <input type="radio" id="retour" name="choice" />
-          <label for="retour" class="ToUpper">retour</label>
-        </div>
-        <div class="col-md-3 col-sm-3">
-          <input type="radio" id="Entretien" name="choice" />
-          <label for="Entretien" class="ToUpper">Entretien</label>
-        </div>
-      </div>
-      <!-- end of choice -->
+        <!-- end of choice -->
 
-      <!-- fiche de reception -->
-      <div class="row row1">
-        <div class="col-md-5 col-sm-5 addpadd">
-          <h3 class="ToUpper headers3">fiche de reception voiture</h3>
-          <div class="col-md-12 col-sm-12">
-            <label for="date">Date:</label>
-            <input type="date" name="date" id="date" style="width: 100%" />
-          </div>
-          <% if(customer){ %>
-          <div class="col-md-12 col-sm-12">
-            <label for="client">Client:</label>
-            <input
-              type="text"
-              name="client"
-              id="client"
-              value="<%=customer.client%>"
-              style="width: 100%"
-            />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="voiture">Voiture:</label>
-            <input
-              type="text"
-              name="car"
-              id="voiture"
-              value="<%=customer.car%>"
-              style="width: 100%"
-            />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="tel">Tél:</label>
-            <input
-              type="text"
-              name="tel"
-              id="tel"
-              value="<%=customer.tel%>"
-              style="width: 100%"
-            />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="Cellulaire">Cellulaire:</label>
-            <input
-              type="text"
-              name="cellulaire"
-              id="Cellulaire"
-              value="<%=customer.cellulaire%>"
-              style="width: 100%"
-            />
-          </div>
-          <% } else{ %>
-          <div class="col-md-12 col-sm-12">
-            <label for="client">Client:</label>
-            <input type="text" name="client" id="client" style="width: 100%" />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="voiture">Voiture:</label>
-            <input type="text" name="car" id="voiture" style="width: 100%" />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="tel">Tél:</label>
-            <input type="text" name="tel" id="tel" style="width: 100%" />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="Cellulaire">Cellulaire:</label>
-            <input
-              type="text"
-              name="cellulaire"
-              id="Cellulaire"
-              style="width: 100%"
-            />
-          </div>
-          <%} %>
+        <!-- fiche de reception -->
+        <div class="row row1">
+          <div class="col-md-5 col-sm-5 addpadd">
+            <h3 class="ToUpper headers3">fiche de reception voiture</h3>
+            <div class="col-md-12 col-sm-12">
+              <label for="date">Date:</label>
+              <input type="date" name="date" id="date" style="width: 100%" />
+            </div>
+            <% if(customer){ %>
+            <div class="col-md-12 col-sm-12">
+              <label for="client">Client:</label>
+              <input
+                type="text"
+                name="client"
+                id="client"
+                value="<%=customer.client%>"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="voiture">Voiture:</label>
+              <input
+                type="text"
+                name="car"
+                id="voiture"
+                value="<%=customer.car%>"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="tel">Tél:</label>
+              <input
+                type="text"
+                name="tel"
+                id="tel"
+                value="<%=customer.tel%>"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="Cellulaire">Cellulaire:</label>
+              <input
+                type="text"
+                name="cellulaire"
+                id="Cellulaire"
+                value="<%=customer.cellulaire%>"
+                style="width: 100%"
+              />
+            </div>
+            <% } else{ %>
+            <div class="col-md-12 col-sm-12">
+              <label for="client">Client:</label>
+              <input
+                type="text"
+                name="client"
+                id="client"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="voiture">Voiture:</label>
+              <input type="text" name="car" id="voiture" style="width: 100%" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="tel">Tél:</label>
+              <input type="text" name="tel" id="tel" style="width: 100%" />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="Cellulaire">Cellulaire:</label>
+              <input
+                type="text"
+                name="cellulaire"
+                id="Cellulaire"
+                style="width: 100%"
+              />
+            </div>
+            <%} %>
 
-          <div class="col-md-12 col-sm-12">
-            <label for="immatriculation">Immatriculation:</label>
-            <input
-              type="text"
-              name="immatriculation"
-              id="immatriculation"
-              style="width: 100%"
-            />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="Kilometrage">Kilometrage:</label>
-            <input
-              type="text"
-              name="Kilometrage"
-              id="Kilometrage"
-              style="width: 100%"
-            />
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <label for="hour">Heure de réception:</label>
-            <input type="text" name="hour" id="hour" style="width: 100%" />
-          </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="immatriculation">Immatriculation:</label>
+              <input
+                type="text"
+                name="immatriculation"
+                id="immatriculation"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="Kilometrage">Kilometrage:</label>
+              <input
+                type="text"
+                name="Kilometrage"
+                id="Kilometrage"
+                style="width: 100%"
+              />
+            </div>
+            <div class="col-md-12 col-sm-12">
+              <label for="hour">Heure de réception:</label>
+              <input type="text" name="hour" id="hour" style="width: 100%" />
+            </div>
 
-          <div class="col-md-12 col-sm-12">
             <div class="col-md-12 col-sm-12">
               <div class="col-md-12 col-sm-12">
-                <label for="tel">Année:</label>
-                <input type="text" name="tel" id="tel" style="width: 100%" />
+                <div class="col-md-12 col-sm-12">
+                  <label for="tel">Année:</label>
+                  <input type="text" name="tel" id="tel" style="width: 100%" />
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <label for="Couleur">Couleur:</label>
+                  <input
+                    type="text"
+                    name="Couleur"
+                    id="Couleur"
+                    style="width: 100%"
+                  />
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <label for="essence">Essence</label>
+                  <select name="essence" id="essence" style="width: 100%">
+                    <option value="empty">|</option>
+                    <option value="half_empty">||</option>
+                    <option value="half">|||</option>
+                    <option value="half_full">||||</option>
+                    <option value="full">|||||</option>
+                  </select>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <label for="tel">Gasoil:</label>
+                  <input
+                    type="text"
+                    name="Gasoil"
+                    id="Gasoil"
+                    style="width: 100%"
+                  />
+                </div>
               </div>
-              <div class="col-md-12 col-sm-12">
-                <label for="Couleur">Couleur:</label>
-                <input
-                  type="text"
-                  name="Couleur"
-                  id="Couleur"
-                  style="width: 100%"
-                />
+              <!-- <div class="col-md-6 col-sm-3 stayinline setBack"></div> -->
+            </div>
+          </div>
+
+          <div class="col-md-7 col-sm-7 addpadd">
+            <h3 class="headers3">
+              Panne trouvée sur le véhicule et Pieces manquantes
+            </h3>
+            <div class="col-md-12 col-sm-12 FitMore">
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="chauffage"
+                    name="chauffage"
+                    value="chauffage"
+                  />
+                  <label for="chauffage">Chauffage</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Phare"
+                    name="Phare"
+                    value="Phare"
+                  />
+                  <label for="Phare">Phare</label>
+                </div>
               </div>
-              <div class="col-md-12 col-sm-12">
-                <label for="essence">Essence</label>
-                <select name="essence" id="essence" style="width: 100%">
-                  <option value="empty">|</option>
-                  <option value="half_empty">||</option>
-                  <option value="half">|||</option>
-                  <option value="half_full">||||</option>
-                  <option value="full">|||||</option>
-                </select>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input type="checkbox" id="Air" name="Air" value="Air" />
+                  <label for="Air">Air bag et SRS</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Clignotant"
+                    name="Clignotant"
+                    value="Clignotant"
+                  />
+                  <label for="Clignotant">Clignotant</label>
+                </div>
               </div>
-              <div class="col-md-12 col-sm-12">
-                <label for="tel">Gasoil:</label>
-                <input
-                  type="text"
-                  name="Gasoil"
-                  id="Gasoil"
-                  style="width: 100%"
-                />
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Rétroviseur"
+                    name="Rétroviseur"
+                    value="Rétroviseur"
+                  />
+                  <label for="Rétroviseur">Rétroviseur</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input type="checkbox" id="Stop" name="Stop" value="Stop" />
+                  <label for="Stop">Stop</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Vitre"
+                    name="Vitre"
+                    value="Vitre"
+                  />
+                  <label for="Vitre">Vitre</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input type="checkbox" id="Pneu" name="Pneu" value="Pneu" />
+                  <label for="Pneu">Pneu secours</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Radio"
+                    name="Radio"
+                    value="Radio"
+                  />
+                  <label for="Radio">Radio</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input type="checkbox" id="Cric" name="Cric" value="Cric" />
+                  <label for="Cric">Cric</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Triangle"
+                    name="Triangle"
+                    value="Triangle"
+                  />
+                  <label for="Triangle">Triangle</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input type="checkbox" id="Clef" name="Clef" value="Clef" />
+                  <label for="Clef">Clef de roue</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Klaxon"
+                    name="Klaxon"
+                    value="Klaxon"
+                  />
+                  <label for="Klaxon">Klaxon</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Essuie"
+                    name="Essuie"
+                    value="Essuie"
+                  />
+                  <label for="Essuie">Essuie Glace</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input type="checkbox" id="ABS" name="ABS" value="ABS" />
+                  <label for="ABS">ABS</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Moteur"
+                    name="Moteur"
+                    value="Moteur"
+                  />
+                  <label for="Moteur">Moteur</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Huile"
+                    name="Huile"
+                    value="Huile"
+                  />
+                  <label for="Huile">Huile Moteur</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Enjoliveur"
+                    name="Enjoliveur"
+                    value="Enjoliveur"
+                  />
+                  <label for="Enjoliveur">Enjoliveur</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Batterie"
+                    name="Batterie"
+                    value="Batterie"
+                  />
+                  <label for="Batterie">Batterie</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Allumage"
+                    name="Allumage"
+                    value="Allumage"
+                  />
+                  <label for="Allumage">Allumage cigarette</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Température"
+                    name="Température"
+                    value="Température"
+                  />
+                  <label for="Température">Température</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="verrouillage"
+                    name="verrouillage"
+                    value="verrouillage"
+                  />
+                  <label for="verrouillage">Systeme verrouillage</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Antenne"
+                    name="Antenne"
+                    value="Antenne"
+                  />
+                  <label for="Antenne">Antenne</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Siege"
+                    name="Siege"
+                    value="Siege"
+                  />
+                  <label for="Siege">Siege</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Par-brise"
+                    name="Par-brise"
+                    value="Par-brise"
+                  />
+                  <label for="Par-brise">Par-brise</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Volet"
+                    name="Volet"
+                    value="Volet"
+                  />
+                  <label for="Volet">Volet d'air</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Capot"
+                    name="Capot"
+                    value="Capot"
+                  />
+                  <label for="Capot">Capot</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Ouverture"
+                    name="Ouverture"
+                    value="Ouverture"
+                  />
+                  <label for="Ouverture">Ouverture de plafond</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Automatique"
+                    name="Automatique"
+                    value="Automatique"
+                  />
+                  <label for="Automatique">Automatique vitesse</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Injecteur"
+                    name="Injecteur"
+                    value="Injecteur"
+                  />
+                  <label for="Injecteur">Injecteur eau vitre</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Manual"
+                    name="Manual"
+                    value="Manual"
+                  />
+                  <label for="Manual">Manual vitesse</label>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                  <input
+                    type="checkbox"
+                    id="Siegeauto"
+                    name="Siegeauto"
+                    value="Siegeauto"
+                  />
+                  <label for="Siegeauto">Siege automatique</label>
+                </div>
               </div>
             </div>
-            <!-- <div class="col-md-6 col-sm-3 stayinline setBack"></div> -->
           </div>
+        </div>
+        <!-- end of fiche de reception -->
+        <div class="row" style="margin-top: 2em">
+          <h3 class="ToUpper headers3">pieces À reparer</h3>
         </div>
 
-        <div class="col-md-7 col-sm-7 addpadd">
-          <h3 class="headers3">
-            Panne trouvée sur le véhicule et Pieces manquantes
-          </h3>
-          <div class="col-md-12 col-sm-12 FitMore">
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="chauffage"
-                  name="chauffage"
-                  value="chauffage"
-                />
-                <label for="chauffage">Chauffage</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Phare" name="Phare" value="Phare" />
-                <label for="Phare">Phare</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Air" name="Air" value="Air" />
-                <label for="Air">Air bag et SRS</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Clignotant"
-                  name="Clignotant"
-                  value="Clignotant"
-                />
-                <label for="Clignotant">Clignotant</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Rétroviseur"
-                  name="Rétroviseur"
-                  value="Rétroviseur"
-                />
-                <label for="Rétroviseur">Rétroviseur</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Stop" name="Stop" value="Stop" />
-                <label for="Stop">Stop</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Vitre" name="Vitre" value="Vitre" />
-                <label for="Vitre">Vitre</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Pneu" name="Pneu" value="Pneu" />
-                <label for="Pneu">Pneu secours</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Radio" name="Radio" value="Radio" />
-                <label for="Radio">Radio</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Cric" name="Cric" value="Cric" />
-                <label for="Cric">Cric</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Triangle"
-                  name="Triangle"
-                  value="Triangle"
-                />
-                <label for="Triangle">Triangle</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Clef" name="Clef" value="Clef" />
-                <label for="Clef">Clef de roue</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Klaxon"
-                  name="Klaxon"
-                  value="Klaxon"
-                />
-                <label for="Klaxon">Klaxon</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Essuie"
-                  name="Essuie"
-                  value="Essuie"
-                />
-                <label for="Essuie">Essuie Glace</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="ABS" name="ABS" value="ABS" />
-                <label for="ABS">ABS</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Moteur"
-                  name="Moteur"
-                  value="Moteur"
-                />
-                <label for="Moteur">Moteur</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Huile" name="Huile" value="Huile" />
-                <label for="Huile">Huile Moteur</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Enjoliveur"
-                  name="Enjoliveur"
-                  value="Enjoliveur"
-                />
-                <label for="Enjoliveur">Enjoliveur</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Batterie"
-                  name="Batterie"
-                  value="Batterie"
-                />
-                <label for="Batterie">Batterie</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Allumage"
-                  name="Allumage"
-                  value="Allumage"
-                />
-                <label for="Allumage">Allumage cigarette</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Température"
-                  name="Température"
-                  value="Température"
-                />
-                <label for="Température">Température</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="verrouillage"
-                  name="verrouillage"
-                  value="verrouillage"
-                />
-                <label for="verrouillage">Systeme verrouillage</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Antenne"
-                  name="Antenne"
-                  value="Antenne"
-                />
-                <label for="Antenne">Antenne</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Siege" name="Siege" value="Siege" />
-                <label for="Siege">Siege</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Par-brise"
-                  name="Par-brise"
-                  value="Par-brise"
-                />
-                <label for="Par-brise">Par-brise</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Volet" name="Volet" value="Volet" />
-                <label for="Volet">Volet d'air</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input type="checkbox" id="Capot" name="Capot" value="Capot" />
-                <label for="Capot">Capot</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Ouverture"
-                  name="Ouverture"
-                  value="Ouverture"
-                />
-                <label for="Ouverture">Ouverture de plafond</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Automatique"
-                  name="Automatique"
-                  value="Automatique"
-                />
-                <label for="Automatique">Automatique vitesse</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Injecteur"
-                  name="Injecteur"
-                  value="Injecteur"
-                />
-                <label for="Injecteur">Injecteur eau vitre</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Manual"
-                  name="Manual"
-                  value="Manual"
-                />
-                <label for="Manual">Manual vitesse</label>
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  type="checkbox"
-                  id="Siegeauto"
-                  name="Siegeauto"
-                  value="Siegeauto"
-                />
-                <label for="Siegeauto">Siege automatique</label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- end of fiche de reception -->
-      <div class="row" style="margin-top: 2em">
-        <h3 class="ToUpper headers3">pieces À reparer</h3>
-      </div>
-
-      <div class="row" style="margin-top: 10px">
-        <div class="col-md-12 col-sm-12 displatFlexEven">
-          <div class="col-md-3 col-sm-12">
-            <div
-              style="
-                border-top: 2px solid #04538c;
-                border-bottom: 2px solid #04538c;
-              "
-            >
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Gaz_Fréon"
-                    name="Gaz_Fréon"
-                    value="Gaz_Fréon"
-                  />
-                  <label for="Gaz_Fréon">Gaz Fréon</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Huile_compresseur"
-                    name="Huile_compresseur"
-                    value="Huile_compresseur"
-                  />
-                  <label for="Huile_compresseur">Huile compresseur</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div style="border-bottom: 2px solid #04538c">
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Bouton_A"
-                    name="Bouton_A"
-                    value="Bouton_A"
-                  />
-                  <label for="Bouton_A">Bouton A/C</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="bouteille_Filtre"
-                    name="bouteille_Filtre"
-                    value="bouteille_Filtre"
-                  />
-                  <label for="bouteille_Filtre">Bouteille du Filtre</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Bobine"
-                    name="Bobine"
-                    value="Bobine"
-                  />
-                  <label for="Bobine">Bobine</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div style="border-bottom: 2px solid #04538c">
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Charbon_Ventilateur"
-                    name="Charbon_Ventilateur"
-                    value="Charbon_Ventilateur"
-                  />
-                  <label for="Charbon_Ventilateur">Charbon ventilateur</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Centralisation"
-                    name="Centralisation"
-                    value="Centralisation"
-                  />
-                  <label for="Centralisation">Centralisation</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Compresseur"
-                    name="Compresseur"
-                    value="Compresseur"
-                  />
-                  <label for="Compresseur">Compresseur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Condenseur"
-                    name="Condenseur"
-                    value="Condenseur"
-                  />
-                  <label for="Condenseur">Condenseur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Courroie"
-                    name="Courroie"
-                    value="Courroie"
-                  />
-                  <label for="Courroie">Courroie</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Clutch"
-                    name="Clutch"
-                    value="Clutch"
-                  />
-                  <label for="Clutch">Clutch</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Culas"
-                    name="Culas"
-                    value="Culas"
-                  />
-                  <label for="Culas">Culas</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div style="border-bottom: 2px solid #04538c">
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Evaporateur"
-                    name="Evaporateur"
-                    value="Evaporateur"
-                  />
-                  <label for="Evaporateur">Evaporateur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Embout"
-                    name="Embout"
-                    value="Embout"
-                  />
-                  <label for="Embout"
-                    >Embout
-                    <span class="SpanClickchange">6</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">8</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">10</span
-                    >&NonBreakingSpace;</label
-                  ><br />
-                </div>
-              </div>
-            </div>
-
-            <div style="border-bottom: 2px solid #04538c">
-              <div class="row">
-                <div class="col-md-12 col-sm-12" style="margin-top: 5px">
-                  <input
-                    type="checkbox"
-                    id="Flexible"
-                    name="Flexible"
-                    value="Flexible"
-                  />
-                  <label for="Flexible"
-                    >Flexible
-                    <span class="SpanClickchange">6</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">8</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">10</span
-                    >&NonBreakingSpace;</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Filtre_pollen"
-                    name="Filtre_pollen"
-                    value="Filtre_pollen"
-                  />
-                  <label for="Filtre_pollen">Filtre à pollen</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Faisceaux_électriques"
-                    name="Faisceaux_électriques"
-                    value="Faisceaux_électriques"
-                  />
-                  <label for="Faisceaux_électriques"
-                    >Faisceaux électriques</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Fusible"
-                    name="Fusible"
-                    value="Fusible"
-                  />
-                  <label for="Fusible">Fusible</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Joint_culas"
-                    name="Joint_culas"
-                    value="Joint_culas"
-                  />
-                  <label for="Joint_culas">Joint culas</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Joint"
-                    name="Joint"
-                    value="Joint"
-                  />
-                  <label for="Joint"
-                    >Joint
-                    <span class="SpanClickchange">4</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">6</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">8</span>&NonBreakingSpace;
-                    <span class="SpanClickchange">10</span
-                    >&NonBreakingSpace;<span class="SpanClickchange"
-                      >12</span
-                    ></label
-                  ><br />
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end of first -->
-          <div class="col-md-3 col-sm-12">
-            <div style="border: 2px solid #04538c; padding-left: 5px">
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Maneau_HP"
-                    name="Maneau_HP"
-                    value="Maneau_HP"
-                  />
-                  <label for="Maneau_HP">Maneau HP</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Module"
-                    name="Module"
-                    value="Module"
-                  />
-                  <label for="Module">Module</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-top: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Poulie_compresseur"
-                    name="Poulie_compresseur"
-                    value="Poulie_compresseur"
-                  />
-                  <label for="Poulie_compresseur">Poulie compresseur</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Pipette_de_charge"
-                    name="Pipette_de_charge"
-                    value="Pipette_de_charge"
-                  />
-                  <label for="Pipette_de_charge">Pipette de charge</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Pulseur_air"
-                    name="Pulseur_air"
-                    value="Pulseur_air"
-                  />
-                  <label for="Pulseur_air">Pulseur d'air</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-top: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Relais"
-                    name="Relais"
-                    value="Relais"
-                  />
-                  <label for="Relais"
-                    >Relais
-                    <span class="SpanClickchange">12</span>&NonBreakingSpace;/
-                    <span class="SpanClickchange">24</span> </label
-                  ><br />
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Roulement"
-                    name="Roulement"
-                    value="Roulement"
-                  />
-                  <label for="Roulement">Roulement</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Résistance_de_vitesse"
-                    name="Résistance_de_vitesse"
-                    value="Résistance_de_vitesse"
-                  />
-                  <label for="Résistance_de_vitesse"
-                    >Résistance de vitesse</label
-                  ><br />
-                </div>
-              </div>
-            </div>
-
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-top: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Seal_compresseur"
-                    name="Seal_compresseur"
-                    value="Seal_compresseur"
-                  />
-                  <label for="Seal_compresseur">Seal compresseur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Sélecteur_de_vitess"
-                    name="Sélecteur_de_vitess"
-                    value="Sélecteur_de_vitess"
-                  />
-                  <label for="Sélecteur_de_vitess">Sélecteur de vitess</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Support_bouteille"
-                    name="Support_bouteille"
-                    value="Support_bouteille"
-                  />
-                  <label for="Support_bouteille">Support bouteille</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Support_compresseur"
-                    name="Support_compresseur"
-                    value="Support_compresseur"
-                  />
-                  <label for="Support_compresseur">Support compresseur</label
-                  ><br />
-                </div>
-              </div>
-            </div>
-
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-top: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Tendeur"
-                    name="Tendeur"
-                    value="Tendeur"
-                  />
-                  <label for="Tendeur">Tendeur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Tuyau_Alu"
-                    name="Tuyau_Alu"
-                    value="Tuyau_Alu"
-                  />
-                  <label for="Tuyau_Alu">Tuyau Alu</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Thermostat"
-                    name="Thermostat"
-                    value="Thermostat"
-                  />
-                  <label for="Thermostat">Thermostat 12 V</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-top: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Valve_détendeur"
-                    name="Valve_détendeur"
-                    value="Valve_détendeur"
-                  />
-                  <label for="Valve_détendeur">Valve détendeur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="Ventilateur"
-                    name="Ventilateur"
-                    value="Ventilateur"
-                  />
-                  <label for="Ventilateur">Ventilateur</label><br />
-                </div>
-              </div>
-            </div>
-
-            <div style="border: 2px solid #04538c; border-top: none">
-              <div class="row">
-                <div class="col-md-12 col-sm-12" style="display: table">
-                  <div
-                    class="col-md-2 col-sm-2"
-                    style="
-                      display: table-cell;
-                      width: 5px;
-                      text-align: center;
-                      border-right: 2px solid #04538c;
-                      border-bottom: 2px solid #04538c;
-                    "
-                  >
-                    <label for="PRO" style="padding-left: 5px">PRO</label>
-                  </div>
-                  <div
-                    class="col-md-5 col-sm-5"
-                    style="display: table-cell; width: 80%; margin: 0px auto"
-                  >
+        <div class="row" style="margin-top: 10px">
+          <div class="col-md-12 col-sm-12 displatFlexEven">
+            <div class="col-md-3 col-sm-12">
+              <div
+                style="
+                  border-top: 2px solid #04538c;
+                  border-bottom: 2px solid #04538c;
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
                     <input
-                      type="text"
-                      id="PRO"
-                      name="PRO"
-                      style="border-color: #04538c"
+                      type="checkbox"
+                      id="Gaz_Fréon"
+                      name="Gaz_Fréon"
+                      value="Gaz_Fréon"
                     />
+                    <label for="Gaz_Fréon">Gaz Fréon</label><br />
                   </div>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12" style="display: table">
-                  <div
-                    class="col-md-2 col-sm-2"
-                    style="
-                      display: table-cell;
-                      width: 5px;
-                      text-align: center;
-                      border-right: 2px solid #04538c;
-                      border-bottom: 2px solid #04538c;
-                    "
-                  >
-                    <label for="BL" style="padding-left: 5px">BL</label>
-                  </div>
-                  <div
-                    class="col-md-5 col-sm-5"
-                    style="display: table-cell; width: 80%; margin: 0px auto"
-                  >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
                     <input
-                      type="text"
-                      id="BL"
-                      name="BL"
-                      style="border-color: #04538c"
+                      type="checkbox"
+                      id="Huile_compresseur"
+                      name="Huile_compresseur"
+                      value="Huile_compresseur"
                     />
+                    <label for="Huile_compresseur">Huile compresseur</label
+                    ><br />
                   </div>
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12" style="display: table">
-                  <div
-                    class="col-md-2 col-sm-2"
-                    style="
-                      display: table-cell;
-                      width: 5px;
-                      text-align: center;
-                      border-right: 2px solid #04538c;
-                      border-bottom: 2px solid #04538c;
-                    "
-                  >
-                    <label for="BC" style="padding-left: 5px">BC</label>
-                  </div>
-                  <div
-                    class="col-md-5 col-sm-5"
-                    style="display: table-cell; width: 80%; margin: 0px auto"
-                  >
+              <div style="border-bottom: 2px solid #04538c">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
                     <input
-                      type="text"
-                      id="BC"
-                      name="BC"
-                      style="border-color: #04538c"
+                      type="checkbox"
+                      id="Bouton_A"
+                      name="Bouton_A"
+                      value="Bouton_A"
                     />
+                    <label for="Bouton_A">Bouton A/C</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="bouteille_Filtre"
+                      name="bouteille_Filtre"
+                      value="bouteille_Filtre"
+                    />
+                    <label for="bouteille_Filtre">Bouteille du Filtre</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Bobine"
+                      name="Bobine"
+                      value="Bobine"
+                    />
+                    <label for="Bobine">Bobine</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-bottom: 2px solid #04538c">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Charbon_Ventilateur"
+                      name="Charbon_Ventilateur"
+                      value="Charbon_Ventilateur"
+                    />
+                    <label for="Charbon_Ventilateur">Charbon ventilateur</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Centralisation"
+                      name="Centralisation"
+                      value="Centralisation"
+                    />
+                    <label for="Centralisation">Centralisation</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Compresseur"
+                      name="Compresseur"
+                      value="Compresseur"
+                    />
+                    <label for="Compresseur">Compresseur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Condenseur"
+                      name="Condenseur"
+                      value="Condenseur"
+                    />
+                    <label for="Condenseur">Condenseur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Courroie"
+                      name="Courroie"
+                      value="Courroie"
+                    />
+                    <label for="Courroie">Courroie</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Clutch"
+                      name="Clutch"
+                      value="Clutch"
+                    />
+                    <label for="Clutch">Clutch</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Culas"
+                      name="Culas"
+                      value="Culas"
+                    />
+                    <label for="Culas">Culas</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-bottom: 2px solid #04538c">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Evaporateur"
+                      name="Evaporateur"
+                      value="Evaporateur"
+                    />
+                    <label for="Evaporateur">Evaporateur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Embout"
+                      name="Embout"
+                      value="Embout"
+                    />
+                    <label for="Embout"
+                      >Embout
+                      <span class="SpanClickchange">6</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">8</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">10</span
+                      >&NonBreakingSpace;</label
+                    ><br />
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-bottom: 2px solid #04538c">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12" style="margin-top: 5px">
+                    <input
+                      type="checkbox"
+                      id="Flexible"
+                      name="Flexible"
+                      value="Flexible"
+                    />
+                    <label for="Flexible"
+                      >Flexible
+                      <span class="SpanClickchange">6</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">8</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">10</span
+                      >&NonBreakingSpace;</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Filtre_pollen"
+                      name="Filtre_pollen"
+                      value="Filtre_pollen"
+                    />
+                    <label for="Filtre_pollen">Filtre à pollen</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Faisceaux_électriques"
+                      name="Faisceaux_électriques"
+                      value="Faisceaux_électriques"
+                    />
+                    <label for="Faisceaux_électriques"
+                      >Faisceaux électriques</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Fusible"
+                      name="Fusible"
+                      value="Fusible"
+                    />
+                    <label for="Fusible">Fusible</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Joint_culas"
+                      name="Joint_culas"
+                      value="Joint_culas"
+                    />
+                    <label for="Joint_culas">Joint culas</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Joint"
+                      name="Joint"
+                      value="Joint"
+                    />
+                    <label for="Joint"
+                      >Joint
+                      <span class="SpanClickchange">4</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">6</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">8</span>&NonBreakingSpace;
+                      <span class="SpanClickchange">10</span
+                      >&NonBreakingSpace;<span class="SpanClickchange"
+                        >12</span
+                      ></label
+                    ><br />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end of first -->
+            <div class="col-md-3 col-sm-12">
+              <div style="border: 2px solid #04538c; padding-left: 5px">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Maneau_HP"
+                      name="Maneau_HP"
+                      value="Maneau_HP"
+                    />
+                    <label for="Maneau_HP">Maneau HP</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Module"
+                      name="Module"
+                      value="Module"
+                    />
+                    <label for="Module">Module</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-top: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Poulie_compresseur"
+                      name="Poulie_compresseur"
+                      value="Poulie_compresseur"
+                    />
+                    <label for="Poulie_compresseur">Poulie compresseur</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Pipette_de_charge"
+                      name="Pipette_de_charge"
+                      value="Pipette_de_charge"
+                    />
+                    <label for="Pipette_de_charge">Pipette de charge</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Pulseur_air"
+                      name="Pulseur_air"
+                      value="Pulseur_air"
+                    />
+                    <label for="Pulseur_air">Pulseur d'air</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-top: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Relais"
+                      name="Relais"
+                      value="Relais"
+                    />
+                    <label for="Relais"
+                      >Relais
+                      <span class="SpanClickchange">12</span>&NonBreakingSpace;/
+                      <span class="SpanClickchange">24</span> </label
+                    ><br />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Roulement"
+                      name="Roulement"
+                      value="Roulement"
+                    />
+                    <label for="Roulement">Roulement</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Résistance_de_vitesse"
+                      name="Résistance_de_vitesse"
+                      value="Résistance_de_vitesse"
+                    />
+                    <label for="Résistance_de_vitesse"
+                      >Résistance de vitesse</label
+                    ><br />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-top: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Seal_compresseur"
+                      name="Seal_compresseur"
+                      value="Seal_compresseur"
+                    />
+                    <label for="Seal_compresseur">Seal compresseur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Sélecteur_de_vitess"
+                      name="Sélecteur_de_vitess"
+                      value="Sélecteur_de_vitess"
+                    />
+                    <label for="Sélecteur_de_vitess">Sélecteur de vitess</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Support_bouteille"
+                      name="Support_bouteille"
+                      value="Support_bouteille"
+                    />
+                    <label for="Support_bouteille">Support bouteille</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Support_compresseur"
+                      name="Support_compresseur"
+                      value="Support_compresseur"
+                    />
+                    <label for="Support_compresseur">Support compresseur</label
+                    ><br />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-top: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Tendeur"
+                      name="Tendeur"
+                      value="Tendeur"
+                    />
+                    <label for="Tendeur">Tendeur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Tuyau_Alu"
+                      name="Tuyau_Alu"
+                      value="Tuyau_Alu"
+                    />
+                    <label for="Tuyau_Alu">Tuyau Alu</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Thermostat"
+                      name="Thermostat"
+                      value="Thermostat"
+                    />
+                    <label for="Thermostat">Thermostat 12 V</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-top: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Valve_détendeur"
+                      name="Valve_détendeur"
+                      value="Valve_détendeur"
+                    />
+                    <label for="Valve_détendeur">Valve détendeur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="Ventilateur"
+                      name="Ventilateur"
+                      value="Ventilateur"
+                    />
+                    <label for="Ventilateur">Ventilateur</label><br />
+                  </div>
+                </div>
+              </div>
+
+              <div style="border: 2px solid #04538c; border-top: none">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12" style="display: table">
+                    <div
+                      class="col-md-2 col-sm-2"
+                      style="
+                        display: table-cell;
+                        width: 5px;
+                        text-align: center;
+                        border-right: 2px solid #04538c;
+                        border-bottom: 2px solid #04538c;
+                      "
+                    >
+                      <label for="PRO" style="padding-left: 5px">PRO</label>
+                    </div>
+                    <div
+                      class="col-md-5 col-sm-5"
+                      style="display: table-cell; width: 80%; margin: 0px auto"
+                    >
+                      <input
+                        type="text"
+                        id="PRO"
+                        name="PRO"
+                        style="border-color: #04538c"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12" style="display: table">
+                    <div
+                      class="col-md-2 col-sm-2"
+                      style="
+                        display: table-cell;
+                        width: 5px;
+                        text-align: center;
+                        border-right: 2px solid #04538c;
+                        border-bottom: 2px solid #04538c;
+                      "
+                    >
+                      <label for="BL" style="padding-left: 5px">BL</label>
+                    </div>
+                    <div
+                      class="col-md-5 col-sm-5"
+                      style="display: table-cell; width: 80%; margin: 0px auto"
+                    >
+                      <input
+                        type="text"
+                        id="BL"
+                        name="BL"
+                        style="border-color: #04538c"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12" style="display: table">
+                    <div
+                      class="col-md-2 col-sm-2"
+                      style="
+                        display: table-cell;
+                        width: 5px;
+                        text-align: center;
+                        border-right: 2px solid #04538c;
+                        border-bottom: 2px solid #04538c;
+                      "
+                    >
+                      <label for="BC" style="padding-left: 5px">BC</label>
+                    </div>
+                    <div
+                      class="col-md-5 col-sm-5"
+                      style="display: table-cell; width: 80%; margin: 0px auto"
+                    >
+                      <input
+                        type="text"
+                        id="BC"
+                        name="BC"
+                        style="border-color: #04538c"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- second One done -->
+            <div class="col-md-3 col-sm-12">
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-left: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <h4 class="ToUpper headers3">Radio</h4>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="R_Radio"
+                      name="R_Radio"
+                      value="R_Radio"
+                    />
+                    <label for="R_Radio">Radio</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="R_Haut_parleur"
+                      name="R_Haut_parleur"
+                      value="R_Haut_parleur"
+                    />
+                    <label for="R_Haut_parleur">Haut parleur</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="R_Klaxon"
+                      name="R_Klaxon"
+                      value="R_Klaxon"
+                    />
+                    <label for="R_Klaxon">Klaxon</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="R_Antenne"
+                      name="R_Antenne"
+                      value="R_Antenne"
+                    />
+                    <label for="R_Antenne">Antenne</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="R_Pédale_accélérateur"
+                      name="R_Pédale_accélérateur"
+                      value="R_Pédale_accélérateur"
+                    />
+                    <label for="R_Pédale_accélérateur"
+                      >Pédale accélérateur</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="R_Poignet_de_vitess"
+                      name="R_Poignet_de_vitess"
+                      value="R_Poignet_de_vitess"
+                    />
+                    <label for="R_Poignet_de_vitess">Poignet de vitess</label
+                    ><br />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- third one done  -->
+            <div class="col-md-3 col-sm-12">
+              <div
+                style="
+                  border: 2px solid #04538c;
+                  border-left: none;
+                  border-right: none;
+                  padding-left: 5px;
+                "
+              >
+                <div class="row">
+                  <h4 class="ToUpper headers3">Alarme</h4>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="A_Alarme"
+                      name="A_Alarme"
+                      value="A_Alarme"
+                    />
+                    <label for="A_Alarme">Alarme</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="A_Verrouillage_central"
+                      name="A_Verrouillage_central"
+                      value="A_Verrouillage_central"
+                    />
+                    <label for="A_Verrouillage_central"
+                      >Verrouillage central</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="A_Vitre_électrique"
+                      name="A_Vitre_électrique"
+                      value="A_Vitre_électrique"
+                    />
+                    <label for="A_Vitre_électrique">Vitre électrique</label
+                    ><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="A_Sirène"
+                      name="A_Sirène"
+                      value="A_Sirène"
+                    />
+                    <label for="A_Sirène">Sirène</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="A_Télécommande"
+                      name="A_Télécommande"
+                      value="A_Télécommande"
+                    />
+                    <label for="A_Télécommande">Télécommande</label><br />
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-sm-12">
+                    <input
+                      type="checkbox"
+                      id="A_Gyrophare"
+                      name="A_Gyrophare"
+                      value="A_Gyrophare"
+                    />
+                    <label for="A_Gyrophare">Gyrophare</label><br />
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- second One done -->
-          <div class="col-md-3 col-sm-12">
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-left: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <h4 class="ToUpper headers3">Radio</h4>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="R_Radio"
-                    name="R_Radio"
-                    value="R_Radio"
-                  />
-                  <label for="R_Radio">Radio</label><br />
-                </div>
-              </div>
+        </div>
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="R_Haut_parleur"
-                    name="R_Haut_parleur"
-                    value="R_Haut_parleur"
-                  />
-                  <label for="R_Haut_parleur">Haut parleur</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="R_Klaxon"
-                    name="R_Klaxon"
-                    value="R_Klaxon"
-                  />
-                  <label for="R_Klaxon">Klaxon</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="R_Antenne"
-                    name="R_Antenne"
-                    value="R_Antenne"
-                  />
-                  <label for="R_Antenne">Antenne</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="R_Pédale_accélérateur"
-                    name="R_Pédale_accélérateur"
-                    value="R_Pédale_accélérateur"
-                  />
-                  <label for="R_Pédale_accélérateur">Pédale accélérateur</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="R_Poignet_de_vitess"
-                    name="R_Poignet_de_vitess"
-                    value="R_Poignet_de_vitess"
-                  />
-                  <label for="R_Poignet_de_vitess">Poignet de vitess</label
-                  ><br />
-                </div>
-              </div>
-            </div>
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <label for="comment">Commentaire:</label>
           </div>
-          <!-- third one done  -->
-          <div class="col-md-3 col-sm-12">
-            <div
-              style="
-                border: 2px solid #04538c;
-                border-left: none;
-                border-right: none;
-                padding-left: 5px;
-              "
-            >
-              <div class="row">
-                <h4 class="ToUpper headers3">Alarme</h4>
-              </div>
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="A_Alarme"
-                    name="A_Alarme"
-                    value="A_Alarme"
-                  />
-                  <label for="A_Alarme">Alarme</label><br />
-                </div>
-              </div>
 
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="A_Verrouillage_central"
-                    name="A_Verrouillage_central"
-                    value="A_Verrouillage_central"
-                  />
-                  <label for="A_Verrouillage_central"
-                    >Verrouillage central</label
-                  ><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="A_Vitre_électrique"
-                    name="A_Vitre_électrique"
-                    value="A_Vitre_électrique"
-                  />
-                  <label for="A_Vitre_électrique">Vitre électrique</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="A_Sirène"
-                    name="A_Sirène"
-                    value="A_Sirène"
-                  />
-                  <label for="A_Sirène">Sirène</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="A_Télécommande"
-                    name="A_Télécommande"
-                    value="A_Télécommande"
-                  />
-                  <label for="A_Télécommande">Télécommande</label><br />
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12 col-sm-12">
-                  <input
-                    type="checkbox"
-                    id="A_Gyrophare"
-                    name="A_Gyrophare"
-                    value="A_Gyrophare"
-                  />
-                  <label for="A_Gyrophare">Gyrophare</label><br />
-                </div>
-              </div>
-            </div>
+          <div class="col-md-12 col-sm-12">
+            <textarea
+              name="comment"
+              id="comment"
+              cols="30"
+              rows="5"
+              style="width: 100%"
+            ></textarea>
           </div>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-3 col-sm-3">
-          <label for="comment">Commentaire:</label>
-        </div>
-
-        <div class="col-md-12 col-sm-12">
-          <textarea
-            name="comment"
-            id="comment"
-            cols="30"
-            rows="5"
-            style="width: 100%"
-          ></textarea>
-        </div>
-      </div>
-
-      <label for="img">Select image:</label>
-      <input type="file" id="img" name="img" multiple="" accept="image/*" />
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" multiple="" accept="image/*" />
+        <button type="submit" id="SubmitBtn" hidden>Click</button>
+      </form>
     </div>
 
     <div class="row" style="margin-top: 10px">

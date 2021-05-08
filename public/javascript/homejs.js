@@ -14,5 +14,7 @@ window.onload = function () {
       jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
     };
     html2pdf().from(invoice).set(opt).save();
+    const submit = document.querySelector("#SubmitBtn");
+    submit.click();
   });
 };
