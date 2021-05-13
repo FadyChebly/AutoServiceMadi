@@ -12,6 +12,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/homecss.css" />
+    <script src="/javascript/printpage.js"></script>
   </head>
   <body>
     <section id="FirstSection">
@@ -40,7 +41,7 @@
         />
       </div>
       <div class="col-md-3 col-sm-3" style="margin: 0px auto">
-        <label for="choice">Type:</label>
+        <label for="choice">Type:</label><br />
         <input
           type="text"
           name="choice"
@@ -50,7 +51,7 @@
         />
       </div>
     </div>
-    <div class="row" style="margin: 15px 0px">
+    <div class="row">
       <h3 class="headers3">Info du client:</h3>
     </div>
     <!-- info du client -->
@@ -97,7 +98,7 @@
       </div>
     </div>
     <!-- fin info du client -->
-    <div class="row" style="margin: 15px 0px">
+    <div class="row">
       <h3 class="headers3">
         Panne trouvée sur le véhicule et Pieces manquantes
       </h3>
@@ -107,6 +108,30 @@
         <label> <%= str %> </label>
       </div>
     </div>
+
+    <div class="row">
+      <h3 class="ToUpper headers3">pieces À reparer</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <label> <%= newstr %> </label>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12">
+      <label for="comment">Commentaire:</label>
+      <textarea
+        name="comment"
+        id="comment"
+        cols="30"
+        rows="5"
+        style="width: 100%"
+        disabled
+      >
+<%= comments %> </textarea
+      >
+    </div>
+    <a href="/" class="Stylebtn">Print</a>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
       integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"

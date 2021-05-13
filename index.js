@@ -58,9 +58,13 @@ app.post("/billing", async (req, res) => {
   const num = number.length;
   const newNum = new Numfile({ counter: "1" });
   await newNum.save();
+
   const customerFilled = req.body.Cust;
   const Panne = req.body.Panne;
   const type = req.body.choice;
+  const Pieces = req.body.Piece;
+  const comments = req.body.comment;
+
   const foundCust = await Customer.find({ client: `${customerFilled.client}` });
   console.log(foundCust.length);
   if (foundCust.length > 0) {
@@ -70,15 +74,22 @@ app.post("/billing", async (req, res) => {
     await MyNewCust.save();
     console.log("saved");
   }
-  console.log(Panne);
+
   let str = "";
   let j = 1;
   Object.values(Panne).forEach(val => {
     str += ` -${j}-${val}  `;
     j++;
   });
-  console.log(str);
-  res.render("bill", { type, num, customerFilled, str });
+
+  let newstr = "";
+  let i = 1;
+  Object.values(Pieces).forEach(val => {
+    newstr += ` -${i}-${val}  `;
+    i++;
+  });
+
+  res.render("bill", { type, num, customerFilled, str, newstr, comments });
 });
 
 app.listen(port, () => {
