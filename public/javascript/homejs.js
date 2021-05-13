@@ -15,6 +15,8 @@ window.onload = function () {
     };
     html2pdf().from(invoice).set(opt).save();
     const submit = document.querySelector("#SubmitBtn");
-    submit.click();
+    setTimeout(function () {
+      submit.click();
+    }, 2000);
   });
 };

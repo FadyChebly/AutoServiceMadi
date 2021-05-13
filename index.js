@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const Customer = require("./models/customer");
 const Numfile = require("./models/FileNumbering");
+const customer = require("./models/customer");
 
 mongoose.connect("mongodb://localhost:27017/CarShop", {
   useNewUrlParser: true,
@@ -44,12 +45,40 @@ app.get("/clients", async (req, res) => {
   res.render("client", { customer });
 });
 
-app.get("/:id", async (req, res) => {
+app.get("/home/:id", async (req, res) => {
   const { id } = req.params;
   const customer = await Customer.findById(id);
   const number = await Numfile.find({});
   const num = number.length;
   res.render("home", { customer, num });
+});
+
+app.post("/billing", async (req, res) => {
+  const number = await Numfile.find({});
+  const num = number.length;
+  const newNum = new Numfile({ counter: "1" });
+  await newNum.save();
+  const customerFilled = req.body.Cust;
+  const Panne = req.body.Panne;
+  const type = req.body.choice;
+  const foundCust = await Customer.find({ client: `${customerFilled.client}` });
+  console.log(foundCust.length);
+  if (foundCust.length > 0) {
+    console.log("not saved");
+  } else {
+    const MyNewCust = new Customer(req.body.Cust);
+    await MyNewCust.save();
+    console.log("saved");
+  }
+  console.log(Panne);
+  let str = "";
+  let j = 1;
+  Object.values(Panne).forEach(val => {
+    str += ` -${j}-${val}  `;
+    j++;
+  });
+  console.log(str);
+  res.render("bill", { type, num, customerFilled, str });
 });
 
 app.listen(port, () => {

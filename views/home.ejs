@@ -68,15 +68,20 @@
         <!-- choice -->
         <div class="row centered">
           <div class="col-md-3 col-sm-3">
-            <input type="radio" id="nouveau" name="choice" />
+            <input type="radio" id="nouveau" name="choice" value="Nouveau" />
             <label for="nouveau" class="ToUpper">nouveau</label>
           </div>
           <div class="col-md-3 col-sm-3">
-            <input type="radio" id="retour" name="choice" />
+            <input type="radio" id="retour" name="choice" value="Retour" />
             <label for="retour" class="ToUpper">retour</label>
           </div>
           <div class="col-md-3 col-sm-3">
-            <input type="radio" id="Entretien" name="choice" />
+            <input
+              type="radio"
+              id="Entretien"
+              name="choice"
+              value="Entretien"
+            />
             <label for="Entretien" class="ToUpper">Entretien</label>
           </div>
         </div>
@@ -95,7 +100,7 @@
               <label for="client">Client:</label>
               <input
                 type="text"
-                name="client"
+                name="Cust[client]"
                 id="client"
                 value="<%=customer.client%>"
                 style="width: 100%"
@@ -105,7 +110,7 @@
               <label for="voiture">Voiture:</label>
               <input
                 type="text"
-                name="car"
+                name="Cust[car]"
                 id="voiture"
                 value="<%=customer.car%>"
                 style="width: 100%"
@@ -115,7 +120,7 @@
               <label for="tel">Tél:</label>
               <input
                 type="text"
-                name="tel"
+                name="Cust[tel]"
                 id="tel"
                 value="<%=customer.tel%>"
                 style="width: 100%"
@@ -125,7 +130,7 @@
               <label for="Cellulaire">Cellulaire:</label>
               <input
                 type="text"
-                name="cellulaire"
+                name="Cust[cellulaire]"
                 id="Cellulaire"
                 value="<%=customer.cellulaire%>"
                 style="width: 100%"
@@ -136,24 +141,34 @@
               <label for="client">Client:</label>
               <input
                 type="text"
-                name="client"
+                name="Cust[client]"
                 id="client"
                 style="width: 100%"
               />
             </div>
             <div class="col-md-12 col-sm-12">
               <label for="voiture">Voiture:</label>
-              <input type="text" name="car" id="voiture" style="width: 100%" />
+              <input
+                type="text"
+                name="Cust[car]"
+                id="voiture"
+                style="width: 100%"
+              />
             </div>
             <div class="col-md-12 col-sm-12">
               <label for="tel">Tél:</label>
-              <input type="text" name="tel" id="tel" style="width: 100%" />
+              <input
+                type="text"
+                name="Cust[tel]"
+                id="tel"
+                style="width: 100%"
+              />
             </div>
             <div class="col-md-12 col-sm-12">
               <label for="Cellulaire">Cellulaire:</label>
               <input
                 type="text"
-                name="cellulaire"
+                name="Cust[cellulaire]"
                 id="Cellulaire"
                 style="width: 100%"
               />
@@ -232,8 +247,8 @@
                   <input
                     type="checkbox"
                     id="chauffage"
-                    name="chauffage"
-                    value="chauffage"
+                    name="Panne[chauffage]"
+                    value="Chauffage"
                   />
                   <label for="chauffage">Chauffage</label>
                 </div>
@@ -241,7 +256,7 @@
                   <input
                     type="checkbox"
                     id="Phare"
-                    name="Phare"
+                    name="Panne[Phare]"
                     value="Phare"
                   />
                   <label for="Phare">Phare</label>
@@ -250,14 +265,19 @@
 
               <div class="row">
                 <div class="col-md-6 col-sm-6">
-                  <input type="checkbox" id="Air" name="Air" value="Air" />
+                  <input
+                    type="checkbox"
+                    id="Air"
+                    name="Panne[Air_Bag]"
+                    value="Air bag et SRS"
+                  />
                   <label for="Air">Air bag et SRS</label>
                 </div>
                 <div class="col-md-6 col-sm-6">
                   <input
                     type="checkbox"
                     id="Clignotant"
-                    name="Clignotant"
+                    name="Panne[Clignotant]"
                     value="Clignotant"
                   />
                   <label for="Clignotant">Clignotant</label>
@@ -269,13 +289,18 @@
                   <input
                     type="checkbox"
                     id="Rétroviseur"
-                    name="Rétroviseur"
+                    name="Panne[Rétroviseur]"
                     value="Rétroviseur"
                   />
                   <label for="Rétroviseur">Rétroviseur</label>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                  <input type="checkbox" id="Stop" name="Stop" value="Stop" />
+                  <input
+                    type="checkbox"
+                    id="Stop"
+                    name="Panne[Stop]"
+                    value="Stop"
+                  />
                   <label for="Stop">Stop</label>
                 </div>
               </div>
@@ -285,13 +310,18 @@
                   <input
                     type="checkbox"
                     id="Vitre"
-                    name="Vitre"
+                    name="Panne[Vitre]"
                     value="Vitre"
                   />
                   <label for="Vitre">Vitre</label>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                  <input type="checkbox" id="Pneu" name="Pneu" value="Pneu" />
+                  <input
+                    type="checkbox"
+                    id="Pneu"
+                    name="Panne[Pneu]"
+                    value="Pneu secours"
+                  />
                   <label for="Pneu">Pneu secours</label>
                 </div>
               </div>
@@ -301,13 +331,18 @@
                   <input
                     type="checkbox"
                     id="Radio"
-                    name="Radio"
+                    name="Panne[Radio]"
                     value="Radio"
                   />
                   <label for="Radio">Radio</label>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                  <input type="checkbox" id="Cric" name="Cric" value="Cric" />
+                  <input
+                    type="checkbox"
+                    id="Cric"
+                    name="Panne[Cric]"
+                    value="Cric"
+                  />
                   <label for="Cric">Cric</label>
                 </div>
               </div>
@@ -317,13 +352,18 @@
                   <input
                     type="checkbox"
                     id="Triangle"
-                    name="Triangle"
+                    name="Panne[Triangle]"
                     value="Triangle"
                   />
                   <label for="Triangle">Triangle</label>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                  <input type="checkbox" id="Clef" name="Clef" value="Clef" />
+                  <input
+                    type="checkbox"
+                    id="Clef"
+                    name="Panne[Clef]"
+                    value="Clef de roue"
+                  />
                   <label for="Clef">Clef de roue</label>
                 </div>
               </div>
@@ -333,7 +373,7 @@
                   <input
                     type="checkbox"
                     id="Klaxon"
-                    name="Klaxon"
+                    name="Panne[Klaxon]"
                     value="Klaxon"
                   />
                   <label for="Klaxon">Klaxon</label>
@@ -342,8 +382,8 @@
                   <input
                     type="checkbox"
                     id="Essuie"
-                    name="Essuie"
-                    value="Essuie"
+                    name="Panne[Essuie]"
+                    value="Essuie Glace"
                   />
                   <label for="Essuie">Essuie Glace</label>
                 </div>
@@ -351,14 +391,19 @@
 
               <div class="row">
                 <div class="col-md-6 col-sm-6">
-                  <input type="checkbox" id="ABS" name="ABS" value="ABS" />
+                  <input
+                    type="checkbox"
+                    id="ABS"
+                    name="Panne[ABS]"
+                    value="ABS"
+                  />
                   <label for="ABS">ABS</label>
                 </div>
                 <div class="col-md-6 col-sm-6">
                   <input
                     type="checkbox"
                     id="Moteur"
-                    name="Moteur"
+                    name="Panne[Moteur]"
                     value="Moteur"
                   />
                   <label for="Moteur">Moteur</label>
@@ -370,8 +415,8 @@
                   <input
                     type="checkbox"
                     id="Huile"
-                    name="Huile"
-                    value="Huile"
+                    name="Panne[Huile]"
+                    value="Huile Moteur"
                   />
                   <label for="Huile">Huile Moteur</label>
                 </div>
@@ -379,7 +424,7 @@
                   <input
                     type="checkbox"
                     id="Enjoliveur"
-                    name="Enjoliveur"
+                    name="Panne[Enjoliveur]"
                     value="Enjoliveur"
                   />
                   <label for="Enjoliveur">Enjoliveur</label>
@@ -391,7 +436,7 @@
                   <input
                     type="checkbox"
                     id="Batterie"
-                    name="Batterie"
+                    name="Panne[Batterie]"
                     value="Batterie"
                   />
                   <label for="Batterie">Batterie</label>
@@ -400,8 +445,8 @@
                   <input
                     type="checkbox"
                     id="Allumage"
-                    name="Allumage"
-                    value="Allumage"
+                    name="Panne[Allumage]"
+                    value="Allumage cigarette"
                   />
                   <label for="Allumage">Allumage cigarette</label>
                 </div>
@@ -412,7 +457,7 @@
                   <input
                     type="checkbox"
                     id="Température"
-                    name="Température"
+                    name="Panne[Température]"
                     value="Température"
                   />
                   <label for="Température">Température</label>
@@ -421,8 +466,8 @@
                   <input
                     type="checkbox"
                     id="verrouillage"
-                    name="verrouillage"
-                    value="verrouillage"
+                    name="Panne[verrouillage]"
+                    value="Systeme verrouillage"
                   />
                   <label for="verrouillage">Systeme verrouillage</label>
                 </div>
@@ -433,7 +478,7 @@
                   <input
                     type="checkbox"
                     id="Antenne"
-                    name="Antenne"
+                    name="Panne[Antenne]"
                     value="Antenne"
                   />
                   <label for="Antenne">Antenne</label>
@@ -442,7 +487,7 @@
                   <input
                     type="checkbox"
                     id="Siege"
-                    name="Siege"
+                    name="Panne[Siege]"
                     value="Siege"
                   />
                   <label for="Siege">Siege</label>
@@ -454,7 +499,7 @@
                   <input
                     type="checkbox"
                     id="Par-brise"
-                    name="Par-brise"
+                    name="Panne[Par-brise]"
                     value="Par-brise"
                   />
                   <label for="Par-brise">Par-brise</label>
@@ -463,8 +508,8 @@
                   <input
                     type="checkbox"
                     id="Volet"
-                    name="Volet"
-                    value="Volet"
+                    name="Panne[Volet]"
+                    value="Volet d'air"
                   />
                   <label for="Volet">Volet d'air</label>
                 </div>
@@ -475,7 +520,7 @@
                   <input
                     type="checkbox"
                     id="Capot"
-                    name="Capot"
+                    name="Panne[Capot]"
                     value="Capot"
                   />
                   <label for="Capot">Capot</label>
@@ -484,8 +529,8 @@
                   <input
                     type="checkbox"
                     id="Ouverture"
-                    name="Ouverture"
-                    value="Ouverture"
+                    name="Panne[Ouverture]"
+                    value="Ouverture de plafond"
                   />
                   <label for="Ouverture">Ouverture de plafond</label>
                 </div>
@@ -496,8 +541,8 @@
                   <input
                     type="checkbox"
                     id="Automatique"
-                    name="Automatique"
-                    value="Automatique"
+                    name="Panne[Automatique]"
+                    value="Automatique vitess"
                   />
                   <label for="Automatique">Automatique vitesse</label>
                 </div>
@@ -505,8 +550,8 @@
                   <input
                     type="checkbox"
                     id="Injecteur"
-                    name="Injecteur"
-                    value="Injecteur"
+                    name="Panne[Injecteur]"
+                    value="Injecteur eau vitre"
                   />
                   <label for="Injecteur">Injecteur eau vitre</label>
                 </div>
@@ -517,8 +562,8 @@
                   <input
                     type="checkbox"
                     id="Manual"
-                    name="Manual"
-                    value="Manual"
+                    name="Panne[Manual]"
+                    value="Manual vitess"
                   />
                   <label for="Manual">Manual vitesse</label>
                 </div>
@@ -526,8 +571,8 @@
                   <input
                     type="checkbox"
                     id="Siegeauto"
-                    name="Siegeauto"
-                    value="Siegeauto"
+                    name="Panne[Siegeauto]"
+                    value="Siege automatique"
                   />
                   <label for="Siegeauto">Siege automatique</label>
                 </div>
