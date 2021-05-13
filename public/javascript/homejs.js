@@ -2,6 +2,7 @@ window.onload = function () {
   const downloadbtn = document.querySelector("#download");
   const numberOfbill = document.querySelector("#BillNum");
   const num = numberOfbill.value;
+
   downloadbtn.addEventListener("click", () => {
     const invoice = document.querySelector(".myInvoice");
     console.log(invoice);
@@ -19,4 +20,8 @@ window.onload = function () {
       submit.click();
     }, 2000);
   });
+
+  const apply = function () {
+    this.color = "red";
+  };
 };

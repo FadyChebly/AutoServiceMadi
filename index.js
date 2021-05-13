@@ -32,7 +32,6 @@ app.get("/", async (req, res) => {
   const number = await Numfile.find({});
   const num = number.length;
   const customer = "";
-  console.log(num);
   res.render("home", { customer, num });
 });
 
@@ -41,7 +40,6 @@ app.get("/clients", async (req, res) => {
   const customer = await Customer.find({
     client: { $regex: ".*" + client + ".*" },
   });
-  console.log(customer.length);
   res.render("client", { customer });
 });
 
