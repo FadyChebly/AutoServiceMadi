@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 const methodOverride = require("method-override");
 const Customer = require("./models/customer");
 const Numfile = require("./models/FileNumbering");
-const customer = require("./models/customer");
 
 mongoose.connect("mongodb://localhost:27017/CarShop", {
   useNewUrlParser: true,
