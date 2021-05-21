@@ -43,6 +43,12 @@ body {
   text-align: center;
 }
 
+.modifylook {
+  border: none;
+  background-color: #04538c;
+  color: white;
+}
+
 #FirstSection {
   color: #04538c;
   border-bottom: 2px solid #04538c;

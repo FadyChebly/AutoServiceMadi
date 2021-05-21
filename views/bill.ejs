@@ -114,7 +114,10 @@
     </div>
     <div class="row">
       <div class="col-md-12 col-sm-12">
-        <label> <%= newstr %> </label>
+        <label> <%= newstr %> </label> &nbsp; <% if(Pro){ %>
+        <label>PRO: <%= Pro %> </label> &nbsp; <% } %> <% if(BL){ %>
+        <label>BL: <%= BL %> </label> &nbsp; <% } %> <% if(BC){ %>
+        <label>BC: <%= BC %> </label> &nbsp; <% } %>
       </div>
     </div>
 

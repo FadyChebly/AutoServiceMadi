@@ -62,6 +62,9 @@ app.post("/billing", async (req, res) => {
   const type = req.body.choice;
   const Pieces = req.body.Piece;
   const comments = req.body.comment;
+  const Pro = req.body.PRO;
+  const BL = req.body.BL;
+  const BC = req.body.BC;
 
   const foundCust = await Customer.find({ client: `${customerFilled.client}` });
   console.log(foundCust.length);
@@ -72,22 +75,34 @@ app.post("/billing", async (req, res) => {
     await MyNewCust.save();
     console.log("saved");
   }
-
   let str = "";
-  let j = 1;
-  Object.values(Panne).forEach(val => {
-    str += ` -${j}-${val}  `;
-    j++;
-  });
-
+  if (Panne) {
+    let j = 1;
+    Object.values(Panne).forEach(val => {
+      str += ` -${j}-${val}  `;
+      j++;
+    });
+  }
   let newstr = "";
-  let i = 1;
-  Object.values(Pieces).forEach(val => {
-    newstr += ` -${i}-${val}  `;
-    i++;
-  });
+  if (Pieces) {
+    let i = 1;
+    Object.values(Pieces).forEach(val => {
+      newstr += ` -${i}-${val}  `;
+      i++;
+    });
+  }
 
-  res.render("bill", { type, num, customerFilled, str, newstr, comments });
+  res.render("bill", {
+    type,
+    num,
+    customerFilled,
+    str,
+    newstr,
+    comments,
+    Pro,
+    BL,
+    BC,
+  });
 });
 
 app.listen(port, () => {

@@ -2,7 +2,12 @@ window.onload = function () {
   const downloadbtn = document.querySelector("#download");
   const numberOfbill = document.querySelector("#BillNum");
   const num = numberOfbill.value;
-
+  const allbuttonstyle = document.querySelectorAll(".SpanClickchange");
+  for (let one of allbuttonstyle) {
+    one.addEventListener("click", () => {
+      one.classList.toggle("modifylook");
+    });
+  }
   downloadbtn.addEventListener("click", () => {
     const invoice = document.querySelector(".myInvoice");
     console.log(invoice);
